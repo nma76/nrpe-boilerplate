@@ -7,18 +7,18 @@ import (
 
 // Main function
 func main() {
-	//Use pointer or channel?
-	var nrpeStatus NrpeStatus = checkNrpe()
+	//Initialize variable that holds status
+	var nrpeStatus NrpeStatus
+	//Call function that does all work with a pointer
+	checkNrpe(&nrpeStatus)
 
+	//Print status message and exit with correct code
 	fmt.Println(nrpeStatus.Message)
 	os.Exit(int(nrpeStatus.Code))
 }
 
-// This function do all work
-func checkNrpe() NrpeStatus {
-	var nrpeStatus NrpeStatus
+// This function does all work and sets the status message and code
+func checkNrpe(nrpeStatus *NrpeStatus) {
 	nrpeStatus.Message = "This message shows in Nagios"
 	nrpeStatus.Code = OK
-
-	return nrpeStatus
 }
