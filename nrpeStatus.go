@@ -9,3 +9,9 @@ const (
 	CRITICAL ReturnStatusEnum = 2
 	UNKNOWN  ReturnStatusEnum = 3
 )
+
+// Return value struct
+type NrpeStatus struct {
+	Message string
+	Code    ReturnStatusEnum
+}

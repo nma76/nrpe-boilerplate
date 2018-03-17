@@ -7,12 +7,18 @@ import (
 
 // Main function
 func main() {
-	var returnCode int = int(checkNrpe())
-	os.Exit(returnCode)
+	//Use pointer or channel?
+	var nrpeStatus NrpeStatus = checkNrpe()
+
+	fmt.Println(nrpeStatus.Message)
+	os.Exit(int(nrpeStatus.Code))
 }
 
 // This function do all work
-func checkNrpe() ReturnStatusEnum {
-	fmt.Println("This message shows in Nagios")
-	return OK
+func checkNrpe() NrpeStatus {
+	var nrpeStatus NrpeStatus
+	nrpeStatus.Message = "This message shows in Nagios"
+	nrpeStatus.Code = OK
+
+	return nrpeStatus
 }
