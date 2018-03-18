@@ -19,6 +19,9 @@ func main() {
 
 // This function does all work and sets the status message and code
 func checkNrpe(nrpeStatus *NrpeStatus) {
+	//TODO: add logic here
+
+	//set correct message and return code
 	nrpeStatus.Message = "This message shows in Nagios"
 	nrpeStatus.Code = OK
 }
