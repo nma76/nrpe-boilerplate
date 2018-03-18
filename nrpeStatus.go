@@ -1,17 +1,17 @@
 package main
 
-type ReturnStatusEnum int
+type ReturnStatus int
 
 // All available return codes
 const (
-	OK       ReturnStatusEnum = 0
-	WARNING  ReturnStatusEnum = 1
-	CRITICAL ReturnStatusEnum = 2
-	UNKNOWN  ReturnStatusEnum = 3
+	OK       ReturnStatus = 0
+	WARNING  ReturnStatus = 1
+	CRITICAL ReturnStatus = 2
+	UNKNOWN  ReturnStatus = 3
 )
 
 // Return value struct
 type NrpeStatus struct {
 	Message string
-	Code    ReturnStatusEnum
+	Code    ReturnStatus
 }
