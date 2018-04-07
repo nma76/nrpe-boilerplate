@@ -9,7 +9,7 @@ import (
 func main() {
 	//Initialize variable that holds status
 	var nrpeStatus NrpeStatus
-	//Call function that does all work with a pointer
+	//Call function that does all work with
 	checkNrpe(&nrpeStatus)
 
 	//Print status message and exit with correct code
@@ -21,7 +21,8 @@ func main() {
 func checkNrpe(nrpeStatus *NrpeStatus) {
 	//TODO: add logic here
 
-	//set correct message and return code
+	//set a message that will show in Nagios
 	nrpeStatus.Message = "This message shows in Nagios"
+	//set status. This shows as gree, yellow, red or gray in nagios
 	nrpeStatus.Code = OK
 }
